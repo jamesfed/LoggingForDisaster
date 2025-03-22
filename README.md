@@ -45,11 +45,11 @@ Personal blog at [myworldofit.net](https://myworldofit.net/).
 </details>
 
 <details>
-<summary>When you get back to your institutions</summary>
+<summary>Demo 2 – Logs from multiple sources</summary>
 
 </details>
 
 <details>
-<summary>Demo 2 – Logs from multiple sources</summary>
+<summary>When you get back to your institutions</summary>
 
 </details>
