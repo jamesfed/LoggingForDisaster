@@ -43,6 +43,12 @@ Personal blog at [myworldofit.net](https://myworldofit.net/).
 <summary>I’m sold! What do I need to do?</summary>
 
 </details>
+
+<details>
+<summary>When you get back to your institutions</summary>
+
+</details>
+
 <details>
 <summary>Demo 2 – Logs from multiple sources</summary>
 
