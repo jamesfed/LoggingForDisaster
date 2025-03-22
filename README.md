@@ -34,6 +34,24 @@ Personal blog at [myworldofit.net](https://myworldofit.net/).
 <details>
 <summary>Where should those logs go?</summary>
 
+# Where should those logs go?
+
+* Local storage
+* Centralised storage
+* Consider 'cloud' options
+
+## If storing on-premises consider
+* Network level access controls to the log system.
+* Authentication to the log system.
+* Dependencies on systems that may be offline in an incident (compute, storage, networking, authentication).
+
+## A recommendation for on-premises
+* Place the server(s) in a dedicated 'logging' network.
+* Restrict access into that network with a network firewall, broadly allow connections to the ports that logging agents talk to, restrict by source network/IP/user/device access to the management interface.
+* Dedicated physical server or servers (3 smaller nodes in a cluster is better than 1 single node by itself).
+* Strong authentication (phishing resistant) as the 'day to day' access, with a fallback to local authentication with a strong (long) passphrase.
+* 
+
 </details>
 <details>
 <summary>Demo 1 – the utility of keeping logs</summary>
