@@ -14,6 +14,21 @@ Personal blog at [myworldofit.net](https://myworldofit.net/).
 <details>
 <summary>What are others saying?</summary>
 
+# What are others saying?
+
+## Center for Internet Security
+
+[https://www.cisecurity.org/](https://www.cisecurity.org/)
+[https://cas.docs.cisecurity.org/en/latest/source/Controls8/](https://cas.docs.cisecurity.org/en/latest/source/Controls8/)
+[https://www.cisecurity.org/insights/white-papers/audit-log-management-policy-template-for-cis-control-8](https://www.cisecurity.org/insights/white-papers/audit-log-management-policy-template-for-cis-control-8)
+
+
+## National Cyber Security Centre (NCSC)
+
+[https://www.ncsc.gov.uk/collection/10-steps/logging-and-monitoring](https://www.ncsc.gov.uk/collection/10-steps/logging-and-monitoring)
+
+
+
 </details>
 
 <details>
@@ -26,6 +41,12 @@ To answer questions, such as:
 * Sophos detected a malicious program on a computer - where did it come from?
 * Based on the data in a threat intel report have we been impacted?
 * What files have been copied to the Internet from a computer?
+
+But also sometimes...
+
+* To comply with regulations.
+* 
+* Generally a 'good idea'.
 
 </details>
 
