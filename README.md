@@ -19,6 +19,14 @@ Personal blog at [myworldofit.net](https://myworldofit.net/).
 <details>
 <summary>Why do I need to log?</summary>
 
+# Why do I need to log?
+
+To answer questions, such as:
+
+* Sophos detected a malicious program on a computer - where did it come from?
+* Based on the data in a threat intel report have we been impacted?
+* What files have been copied to the Internet from a computer?
+
 </details>
 
 <details>
@@ -50,6 +58,11 @@ Personal blog at [myworldofit.net](https://myworldofit.net/).
 * Restrict access into that network with a network firewall, broadly allow connections to the ports that logging agents talk to, restrict by source network/IP/user/device access to the management interface.
 * Dedicated physical server or servers (3 smaller nodes in a cluster is better than 1 single node by itself).
 * Strong authentication (phishing resistant) as the 'day to day' access, with a fallback to local authentication with a strong (long) passphrase.
+
+# Volume vs value
+* Firewall traffic logs - VERY high volume, low relative value
+* DNS logs - high volume, low-medium relative value
+  * But.... DNS is encrypted now
 * 
 
 </details>
