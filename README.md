@@ -108,6 +108,9 @@ But also...
 * Excessive requests to unauthorised web or file sharing services.
 * Break glass account used... careful about to hit that rabbit hole.
 
+## Sigma rules as inspiration
+* [https://github.com/SigmaHQ/sigma](https://github.com/SigmaHQ/sigma)
+
 </details>
 
 <details>
@@ -187,6 +190,26 @@ But also...
 <summary>Demo 2 – Malware detection triggers investigation</summary>
 
 # Demo 2 – Malware detection triggers investigation
+
+[Validato](https://validato.io/), [Microsoft Defender](https://www.microsoft.com/en-gb/security/business/endpoint-security/microsoft-defender-endpoint), [LimaCharlie EDR](https://limacharlie.io/)
+
+## Detection by Microsoft Defender
+
+![Defender awakes!](https://github.com/user-attachments/assets/94c0b806-f8c4-44e1-a459-5160b5e5e520)
+
+## Defenders point of view
+
+![EDR-1](https://github.com/user-attachments/assets/b50da0d5-61b5-41ba-b26a-756d97d79a0f)
+
+![EDR-2](https://github.com/user-attachments/assets/de3dc61b-7e56-40f6-a8df-43188afc6804)
+
+![EDR-3](https://github.com/user-attachments/assets/fb4507aa-a751-4c13-91b2-199fa764280b)
+
+![EDR-4](https://github.com/user-attachments/assets/a6d3d67b-f0c3-4494-8528-16906986a8c9)
+
+![EDR-5](https://github.com/user-attachments/assets/d9edfc2a-71a8-448b-83b5-6ca4cc7a2485)
+
+![EDR-6](https://github.com/user-attachments/assets/1ddf7fcd-87cb-4442-868d-433363bf46bf)
 
 </details>
 
