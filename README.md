@@ -1,6 +1,10 @@
 # Logging for disaster
 Practical steps to help be ready to investigate a compromise. A presentation delivered to the [College IT Conference 2025](https://citc.college/).
 
+Following on from:
+* [Practical steps to help mitigate the risk of Zero-Day vulnerabilities.](https://myworldofit.net/?p=11366)
+* [All of this has happened before. All of this will happen again (MITRE ATT&CK).](https://myworldofit.net/?p=11325)
+
 **As a presentation on YouTube:** Coming soon!
 
 By **James Preston** of [ANSecurity](https://www.ansecurity.com/).
@@ -13,9 +17,12 @@ Personal blog at [myworldofit.net](https://myworldofit.net/).
 # By the end of this presentation you will
 * Have direction on the creation of a logging policy.
 * Understand the utility of logging in the context of incident response.
-* Be able to identify essential, desirable, and optional log sources.
+* Be able to identify useful log sources.
 * Have options on how to obtain and store your logs.
 * Be ready to log!
+
+# My intent
+* Provide a 'quick start' point in a direction for effective logging.
 
 </details>
 
@@ -32,8 +39,17 @@ Personal blog at [myworldofit.net](https://myworldofit.net/).
 ## National Cyber Security Centre (NCSC)
 * [https://www.ncsc.gov.uk/collection/10-steps/logging-and-monitoring](https://www.ncsc.gov.uk/collection/10-steps/logging-and-monitoring)
 
-## Vendor documentation
+## Log configuration guidance
 * [https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/audit-policy-recommendations](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/audit-policy-recommendations)
+* [https://www.cisecurity.org/cis-benchmarks](https://www.cisecurity.org/cis-benchmarks)
+
+### Apache web server
+From the CIS Benchmarks
+![CIS Benchmarks](https://github.com/user-attachments/assets/ced08f6b-13c3-4373-89e2-e475d200e82d)
+
+### VMware ESXi
+From the CIS Benchmarks
+![CIS Benchmarks](https://github.com/user-attachments/assets/b170440d-b942-4aa7-9c0f-16861df33302)
 
 </details>
 
@@ -50,6 +66,14 @@ But also...
 * To identify the root cause of an incident (non-security related!).
 * To comply with regulations.
 * Generally a 'good idea'.
+
+Perhaps most of all so that you don't have to use sentences like:
+* "fined for a breach that put personal information of 79,404 people at risk"
+* "The unidentified hackers"
+* "The security measures of Advanced's subsidiary fell seriously short of what we would expect from an organisation processing such a large volume of sensitive information," Mr Edwards said.
+* "There is no excuse for leaving any part of your system vulnerable," Mr Edwards added.
+
+From: [BBC News - NHS software provider fined £3m over data breach after ransomware attack](https://www.bbc.co.uk/news/articles/cp3yv1zxn94o)
 
 ## Beware - rabbit hole ahead!
 * Deception and honeypots.
@@ -93,10 +117,9 @@ But also...
 * Script/command line interface use.
 
 ## Data that'll be useful in threat hunting
-* [https://github.com/sophoslabs/IoCs](https://github.com/sophoslabs/IoCs)
-* [https://github.com/PaloAltoNetworks/Unit42-Threat-Intelligence-Article-Information](https://github.com/PaloAltoNetworks/Unit42-Threat-Intelligence-Article-Information)
-* [https://www.ncsc.gov.uk/section/keep-up-to-date/malware-analysis-reports](https://www.ncsc.gov.uk/section/keep-up-to-date/malware-analysis-reports)
-
+* [https://github.com/sophoslabs/IoCs](https://github.com/sophoslabs/IoCs).
+* [https://github.com/PaloAltoNetworks/Unit42-Threat-Intelligence-Article-Information](https://github.com/PaloAltoNetworks/Unit42-Threat-Intelligence-Article-Information).
+* [https://www.ncsc.gov.uk/section/keep-up-to-date/malware-analysis-reports](https://www.ncsc.gov.uk/section/keep-up-to-date/malware-analysis-reports).
 * URLs.
 * File hashes (MD5/SHA1/SHA256).
 * File names and paths.
@@ -109,7 +132,11 @@ But also...
 * Break glass account used... careful about to hit that rabbit hole.
 
 ## Sigma rules as inspiration
-* [https://github.com/SigmaHQ/sigma](https://github.com/SigmaHQ/sigma)
+* [https://github.com/SigmaHQ/sigma](https://github.com/SigmaHQ/sigma).
+
+## Log retention
+* Minimum 90 days for all logs.
+* Target as long as you can (365 days wouldn't be abnormal) for high value logs.
 
 </details>
 
@@ -119,17 +146,33 @@ But also...
 # How do I capture logs?
 
 ## Windows
-* From Windows Event Logs, [NXLog CE](https://nxlog.co/products/nxlog-community-edition), 
+* Deploy [sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) everywhere.
+* Increase the minimum local retention for Event Logs.
+  * ~2GB limit for 'live'.
+* [NXLog CE](https://nxlog.co/products/nxlog-community-edition) and [Winlogbeat](https://www.elastic.co/guide/en/beats/winlogbeat/8.17/winlogbeat-installation-configuration.html).
+  * Direct out of Event Logs.
+  * Read file system.
 
 ## Linux
+* rsyslog.
+  * imklog.
+  * imjournal.
+  * Read file system (e.g. for Apache).
 
-
-## Network appliances
-
+## Network appliances/Infrastructure
+* Syslog.
+  * Common Event Format (CEF).
+    * [FortiGate](https://docs.fortinet.com/document/fortigate/7.4.4/fortios-log-message-reference/604144/cef-support).
+    * [Palo Alto Networks](https://github.com/jamesfed/PANOSSyslogCEF).
+    * [SonicWall](https://www.sonicwall.com/support/knowledge-base/how-to-configure-sonicos-syslog-settings-for-microsoft-sentinel-integration/241003073427260).
 
 ## Cloud Services
 * API connectors.
-* 
+  * Normally some kind of agent required that connects into the cloud service and downloads logs on a routine.
+  * [Sophos SIEM integration script](https://github.com/sophos/Sophos-Central-SIEM-Integration).
+
+From [LimaCharlie](https://limacharlie.io/).
+![LimaCharlie](https://github.com/user-attachments/assets/e0c52226-cb01-4b55-be08-e0ead4f487dc)
 
 </details>
 
@@ -137,15 +180,20 @@ But also...
 <summary>Where should those logs go?</summary>
 
 # Where should those logs go?
-* Local storage
-* Centralised storage
-* Consider 'cloud' options
+* Local storage.
+* Centralised storage.
+  * [https://graylog.org/](https://graylog.org/).
+  * Lots of options out there based on [Elasticsearch](https://www.elastic.co/enterprise-search) or [OpenSearch](https://opensearch.org/).
+* Consider 'cloud' options.
+  * Perhaps just as a relay for end-user devices working remotely.
+* In an emergency and you don't have anything setup:
+  * [https://docs.velociraptor.app/](https://docs.velociraptor.app/)
 
 ## Consider: authentication and encryption
 * Network appliances don't always support both/either.
 * May need to use some form of logging 'proxy'.
 * If running a 'cloud' logging service the importance is even greater.
-* Don't underestimate a threat actors resourcefulness, easy to generate sufficient logs to overwhelm a system.
+* Don't underestimate a threat actors resourcefulness, easy to generate sufficient logs to overwhelm a system or inject malicious content into logs.
 
 ## If storing on-premises consider
 * Network level access controls to the log system.
@@ -155,34 +203,28 @@ But also...
 ## A recommendation for on-premises
 * Place the server(s) in a dedicated 'logging' network.
 * Restrict access into that network with a network firewall, broadly allow connections to the ports that logging agents talk to, restrict by source network/IP/user/device access to the management interface.
-* Dedicated physical server or servers (3 smaller nodes in a cluster is better than 1 single node by itself).
+* Dedicated physical server or servers (3 smaller nodes in a cluster is better than a single node by itself).
 * Strong authentication (phishing resistant) as the 'day to day' access, with a fallback to local authentication with a strong (long) passphrase.
 
-# Volume vs value
-* Firewall traffic logs - VERY high volume, low relative value
-* DNS logs - high volume, low-medium relative value
-  * But.... DNS is encrypted now
-* 
+# Volume vs value (examples)
+* Firewall traffic logs - VERY high volume, low relative value.
+* DNS logs - high volume, low-medium relative value.
+  * But.... DNS is encrypted now.
+* Command line logs - low-medium volume, high relative value.
+* Previously unseen application launched (or attempted to) - low volume, high relative value.
 
 </details>
 
 <details>
-<summary>I’m sold! What do I need to do?</summary>
+<summary>Sharing your logs</summary>
 
-# I’m sold! What do I need to do?
-
-## But also don't forget to:
-
-* Do maintenance! Don't let that logging system run out of disk space!
-* Check all log sources are sending logs.
-* Routine check that the times of systems are in sync.
-
-## If you have the spare time:
-
-* Conduct audit log reviews.
-  * Perform some 'malicious' activities and then check that the logs you expect were captured.
-    * [There is software that can help with this](https://validato.io/).
-  * Use threat intel reports 
+# Sharing your logs
+* Volume (TBs of logs!) is often the main problem.
+* Bulk file transfer of text files.
+* Not uncommon to grant read-only access to the centralised log store.
+* Export from >X<Search to JSON.
+* Export with backup feature and then import.
+  * [OpenSearch snapshots](https://opensearch.org/docs/latest/tuning-your-cluster/availability-and-recovery/snapshots/index/).
 
 </details>
 
@@ -238,9 +280,42 @@ But also...
 </details>
 
 <details>
+<summary>Some other cool things you can do with logs</summary>
+
+# Some other cool things you can do with logs
+
+![Nessus](https://github.com/user-attachments/assets/b7553139-3f9b-4bbe-aa8d-471bb62b43cb)
+
+![Be amazed by the Christmas spike in brute force attacks](https://github.com/user-attachments/assets/9c71622f-a74f-46dd-983a-51305736c45b)
+
+![Get longer data retention than cloud services provide](https://github.com/user-attachments/assets/a8b9f857-1ef9-4c7a-8be0-faf1535591c9)
+
+</details>
+
+<details>
 <summary>When you get back to your institutions</summary>
 
 # When you get back to your institutions
+
+* Talk with senior leadership about establishing a formal policy for logging.
+  * Then take that policy and turn it into practice/procedure.
+* Find 1 (or 3!) old(er) servers (desktops), fill them with disks (8TB SSDs are cheap), configure a logging stack of your choice.
+  * Get firewall, web server, AV agent, and authentication logs flowing into them.
+* Review options for an EDR service.
+  * [LimaCharlie](https://limacharlie.io/) really is a great entry point, try it out on some web servers and go snooping!
+
+## But also don't forget to:
+
+* Do maintenance! Don't let that logging system run out of disk space!
+* Check all log sources are sending logs.
+* Routine check that the times of systems are in sync.
+
+## If you have the spare time:
+
+* Conduct audit log reviews.
+  * Perform some 'malicious' activities and then check that the logs you expect were captured.
+    * [There is software that can help with this](https://validato.io/).
+  * Use threat intel reports.
 
 </details>
 
@@ -251,9 +326,15 @@ But also...
 
 But a good defence is still a good defence.
 
-* Decrypt!
-* Outbound filtering!
+* Build a culture of reporting abnormal events.
+* Install AV everywhere, including on Linux web servers!
 * MFA (or even better strong authentication) everything!
-* 
+* Decrypt!
+  * Inbound (where you own the private key already).
+  * Outbound (where you generate new trusted certificates on the fly for services that you don't have the private key for).
+* Configure outbound filtering!
+  * Block access to remote access tools (legitimate and otherwise).
+  * Strict outbound filtering from services that allow connections from untrusted networks/devices.
+* Test your backups!
 
 </details>
