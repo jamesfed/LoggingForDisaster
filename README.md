@@ -11,9 +11,6 @@ By **James Preston** of [ANSecurity](https://www.ansecurity.com/).
 
 Personal blog at [myworldofit.net](https://myworldofit.net/).
 
-<details>
-<summary>By the end of this presentation you will</summary>
-
 # By the end of this presentation you will
 * Have direction on the creation of a logging policy.
 * Understand the utility of logging in the context of incident response.
@@ -23,11 +20,6 @@ Personal blog at [myworldofit.net](https://myworldofit.net/).
 
 # My intent
 * Provide a 'quick start' point in a direction for effective logging.
-
-</details>
-
-<details>
-<summary>What are others saying?</summary>
 
 # What are others saying?
 
@@ -50,11 +42,6 @@ From the CIS Benchmarks
 ### VMware ESXi
 From the CIS Benchmarks
 ![CIS Benchmarks](https://github.com/user-attachments/assets/b170440d-b942-4aa7-9c0f-16861df33302)
-
-</details>
-
-<details>
-<summary>Why do I need to log?</summary>
 
 # Why do I need to log?
 To answer questions, such as:
@@ -79,11 +66,6 @@ From: [BBC News - NHS software provider fined £3m over data breach after ransom
 * Deception and honeypots.
 * Log review.
 
-</details>
-
-<details>
-<summary>Demo 1 – data exfiltration</summary>
-
 # Demo 1 – data exfiltration
 
 [Validato](https://validato.io/), manual exfiltration, and [Microsoft Defender EDR](https://www.microsoft.com/en-gb/security/business/endpoint-security/microsoft-defender-endpoint)
@@ -99,11 +81,6 @@ From: [BBC News - NHS software provider fined £3m over data breach after ransom
 ![Data exfiltration-2](https://github.com/user-attachments/assets/d6d0694d-e7f3-4adc-8521-2078346653c2)
 
 ![Data exfiltration-3](https://github.com/user-attachments/assets/c688dc20-a69b-411a-b7ac-3515d274aabf)
-
-</details>
-
-<details>
-<summary>What should I log?</summary>
 
 # What should I log?
 
@@ -138,11 +115,6 @@ From: [BBC News - NHS software provider fined £3m over data breach after ransom
 * Minimum 90 days for all logs.
 * Target as long as you can (365 days wouldn't be abnormal) for high value logs.
 
-</details>
-
-<details>
-<summary>How do I capture logs?</summary>
-
 # How do I capture logs?
 
 ## Windows
@@ -173,11 +145,6 @@ From: [BBC News - NHS software provider fined £3m over data breach after ransom
 
 From [LimaCharlie](https://limacharlie.io/).
 ![LimaCharlie](https://github.com/user-attachments/assets/e0c52226-cb01-4b55-be08-e0ead4f487dc)
-
-</details>
-
-<details>
-<summary>Where should those logs go?</summary>
 
 # Where should those logs go?
 * Local storage.
@@ -213,11 +180,6 @@ From [LimaCharlie](https://limacharlie.io/).
 * Command line logs - low-medium volume, high relative value.
 * Previously unseen application launched (or attempted to) - low volume, high relative value.
 
-</details>
-
-<details>
-<summary>Sharing your logs</summary>
-
 # Sharing your logs
 * Volume (TBs of logs!) is often the main problem.
 * Bulk file transfer of text files.
@@ -225,11 +187,6 @@ From [LimaCharlie](https://limacharlie.io/).
 * Export from >X<Search to JSON.
 * Export with backup feature and then import.
   * [OpenSearch snapshots](https://opensearch.org/docs/latest/tuning-your-cluster/availability-and-recovery/snapshots/index/).
-
-</details>
-
-<details>
-<summary>Demo 2 – Malware detection triggers investigation</summary>
 
 # Demo 2 – Malware detection triggers investigation
 
@@ -253,11 +210,6 @@ From [LimaCharlie](https://limacharlie.io/).
 
 ![EDR-6](https://github.com/user-attachments/assets/1ddf7fcd-87cb-4442-868d-433363bf46bf)
 
-</details>
-
-<details>
-<summary>Demo 3 – Web shell party mode 🎉🥳</summary>
-
 # Demo 3 – Web shell party mode 🎉🥳
 
 [VirusTotal](https://www.virustotal.com/), [wordpress_shell.php](https://github.com/BlackArch/webshells/blob/master/php/wordpress_shell.php), [LimaCharlie EDR](https://limacharlie.io/).
@@ -277,11 +229,6 @@ From [LimaCharlie](https://limacharlie.io/).
 
 ![INVESTIGATE!!!](https://github.com/user-attachments/assets/b1623e7e-2fd4-47cb-8060-3297d41a84a4)
 
-</details>
-
-<details>
-<summary>Some other cool things you can do with logs</summary>
-
 # Some other cool things you can do with logs
 
 ![Nessus](https://github.com/user-attachments/assets/b7553139-3f9b-4bbe-aa8d-471bb62b43cb)
@@ -289,11 +236,6 @@ From [LimaCharlie](https://limacharlie.io/).
 ![Be amazed by the Christmas spike in brute force attacks](https://github.com/user-attachments/assets/9c71622f-a74f-46dd-983a-51305736c45b)
 
 ![Get longer data retention than cloud services provide](https://github.com/user-attachments/assets/a8b9f857-1ef9-4c7a-8be0-faf1535591c9)
-
-</details>
-
-<details>
-<summary>When you get back to your institutions</summary>
 
 # When you get back to your institutions
 
@@ -317,11 +259,6 @@ From [LimaCharlie](https://limacharlie.io/).
     * [There is software that can help with this](https://validato.io/).
   * Use threat intel reports.
 
-</details>
-
-<details>
-<summary>Logging and being able to respond is great...</summary>
-
 # Logging and being able to respond is great...
 
 But a good defence is still a good defence.
@@ -342,5 +279,3 @@ But a good defence is still a good defence.
 ![WAF](https://github.com/user-attachments/assets/a9aab5f4-f072-4472-b211-5426782bd9c3)
 
 # jpreston@ansecurity.com
-
-</details>
