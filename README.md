@@ -337,4 +337,9 @@ But a good defence is still a good defence.
   * Strict outbound filtering from services that allow connections from untrusted networks/devices.
 * Test your backups!
 
+![ANSecurity](https://github.com/user-attachments/assets/5f27bfb0-2925-4748-94b7-23aa224eab26)
+
+![WAF](https://github.com/user-attachments/assets/a9aab5f4-f072-4472-b211-5426782bd9c3)
+
+
 </details>
