@@ -5,7 +5,7 @@ Following on from:
 * [Practical steps to help mitigate the risk of Zero-Day vulnerabilities.](https://myworldofit.net/?p=11366)
 * [All of this has happened before. All of this will happen again (MITRE ATT&CK).](https://myworldofit.net/?p=11325)
 
-**As a presentation on YouTube:** Coming soon!
+**As a presentation on YouTube:** [https://www.youtube.com/watch?v=dWX5vqk6EJ0](https://www.youtube.com/watch?v=dWX5vqk6EJ0)
 
 By **James Preston** of [ANSecurity](https://www.ansecurity.com/).
 
